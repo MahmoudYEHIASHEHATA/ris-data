@@ -1,4 +1,4 @@
-package com.cassbana.antifraud
+package com.cassbana.risk
 
 import org.junit.Test
 

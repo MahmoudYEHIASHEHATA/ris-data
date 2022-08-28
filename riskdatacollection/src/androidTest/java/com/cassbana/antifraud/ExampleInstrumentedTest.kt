@@ -1,4 +1,4 @@
-package com.cassbana.antifraud
+package com.cassbana.risk
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.cassbana.antifraud.test", appContext.packageName)
+        assertEquals("com.cassbana.risk.test", appContext.packageName)
     }
 }

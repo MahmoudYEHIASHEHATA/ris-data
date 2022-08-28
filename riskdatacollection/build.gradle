@@ -96,8 +96,8 @@ afterEvaluate {
                 // The coordinates of the library, being set from variables that
                 // we'll set up later
                 groupId 'com.cassbana.risk'
-                artifactId 'data-collection'
-                version '1.0.0'
+                artifactId 'risk-data-collection'
+                version '1.0.1'
                 // Two artifacts, the `aar (or `jar`) and the sources
                 if (project.plugins.findPlugin("com.android.library")) {
                     from components.release
@@ -107,8 +107,8 @@ afterEvaluate {
 
                 // Mostly self-explanatory metadata
                 pom {
-                    name = 'data-collection'
-                    description = 'data-collection'
+                    name = 'risk-data-collection'
+                    description = 'risk-data-collection'
                     url = 'https://github.com/MahmoudYEHIASHEHATA/ris-data'
                 }
 

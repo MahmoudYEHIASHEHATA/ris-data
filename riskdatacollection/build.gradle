@@ -109,7 +109,7 @@ afterEvaluate {
                 pom {
                     name = 'data-collection'
                     description = 'data-collection'
-                    url = 'https://github.com/MahmoudYEHIASHEHATA/POC-Library'
+                    url = 'https://github.com/MahmoudYEHIASHEHATA/ris-data'
                 }
 
             }

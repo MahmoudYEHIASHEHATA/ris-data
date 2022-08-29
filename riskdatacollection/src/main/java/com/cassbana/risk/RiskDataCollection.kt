@@ -10,17 +10,16 @@ import com.cassbana.risk.workers.simInfo.RSSIMInfoCollectWorker
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.Koin
 import org.koin.core.KoinApplication
-import org.koin.core.component.KoinComponent
+import org.koin.core.KoinComponent
 
 object RiskDataCollection {
 
 
-    lateinit var internalKoinApplication: KoinApplication
+    internal var internalKoinApplication =KoinApplication.create()
     lateinit var application: Application
 
-    fun init(application: Application,koinApplication: KoinApplication) {
-        com.cassbana.risk.RiskDataCollection.internalKoinApplication = koinApplication
-        com.cassbana.risk.RiskDataCollection.internalKoinApplication.apply {
+    fun init(application: Application) {
+        internalKoinApplication.apply {
             androidContext(application)
             modules(listOf(workersModuleRS, networkModuleRS, databaseModuleRs))
         }
@@ -37,7 +36,7 @@ object RiskDataCollection {
 
 internal interface MySdkKoinComponent : KoinComponent {
     override fun getKoin(): Koin {
-        return com.cassbana.risk.RiskDataCollection.internalKoinApplication.koin
+        return RiskDataCollection.internalKoinApplication.koin
     }
 
 }

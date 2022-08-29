@@ -14,7 +14,7 @@ import com.cassbana.risk.workers.utils.RSCalculatingDifferenceInChunks
 import com.cassbana.risk.workers.utils.SimSubscriptionManager
 import com.cassbana.risk.workers.utils.RSSyncingStrategy
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import org.koin.core.component.inject
+import org.koin.core.inject
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 

@@ -2,21 +2,22 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
+        jcenter()
         mavenCentral()
         maven {
             url 'https://jitpack.io'
         }
-        maven{url  'https://dl.bintray.com/ekito/koin'}
     }
 }
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        jcenter()
         maven {
             url 'https://jitpack.io'
         }
-        maven{url 'https://dl.bintray.com/ekito/koin'}
     }
 }
 rootProject.name = "risk-data-collection"

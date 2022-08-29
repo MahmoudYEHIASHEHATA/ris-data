@@ -52,10 +52,26 @@ dependencies {
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.2'
 
+
+  //  def koin_version = '2.0.1'
+//    implementation "org.koin:koin-java:$koin_version"
+//    implementation "org.koin:koin-android:$koin_version"
+//    implementation "org.koin:koin-androidx-scope:$koin_version"
+//    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+//    implementation "org.koin:koin-androidx-ext:$koin_version"
+
+
     def koin_version = '2.0.1'
-    api "io.insert-koin:koin-core:$koin_version"
-    api "io.insert-koin:koin-android:$koin_version"
-  //  implementation "io.insert-koin:koin-android-compat:$koin_version"
+    implementation "org.koin:koin-java:$koin_version"
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    implementation "org.koin:koin-androidx-ext:$koin_version"
+
+//    def koin_version = '2.0.1'
+//    implementation "io.insert-koin:koin-core:$koin_version"
+//    implementation "io.insert-koin:koin-android:$koin_version"
+//  //  implementation "io.insert-koin:koin-android-compat:$koin_version"
 
     //  Koin
 //    def koin_version = "3.2.0"
@@ -102,7 +118,7 @@ afterEvaluate {
                 // we'll set up later
                 groupId 'com.cassbana.risk'
                 artifactId 'risk-data-collection'
-                version '1.0.4'
+                version '1.0.5'
                 // Two artifacts, the `aar (or `jar`) and the sources
                 if (project.plugins.findPlugin("com.android.library")) {
                     from components.release

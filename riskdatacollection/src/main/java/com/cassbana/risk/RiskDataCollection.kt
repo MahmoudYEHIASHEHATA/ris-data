@@ -7,6 +7,7 @@ import com.cassbana.risk.database.databaseModuleRs
 import com.cassbana.risk.workers.di.networkModuleRS
 import com.cassbana.risk.workers.di.workersModuleRS
 import com.cassbana.risk.workers.simInfo.RSSIMInfoCollectWorker
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.Koin
 import org.koin.core.KoinApplication

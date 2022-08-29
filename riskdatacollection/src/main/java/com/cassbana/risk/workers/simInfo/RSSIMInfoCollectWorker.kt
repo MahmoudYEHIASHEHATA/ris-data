@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit
 @ExperimentalCoroutinesApi
 class RSSIMInfoCollectWorker(
     val context: Context, workerParams: WorkerParameters
-) : CoroutineWorker(context, workerParams), com.cassbana.risk.MySdkKoinComponent {
+) : CoroutineWorker(context, workerParams), MySdkKoinComponent {
 
     companion object {
         private const val TAG = "SIMInfoCollectWorker"

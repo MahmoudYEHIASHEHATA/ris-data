@@ -15,7 +15,8 @@ import org.koin.core.KoinComponent
 object RiskDataCollection {
 
 
-    internal var internalKoinApplication =KoinApplication.create()
+
+    internal val internalKoinApplication =KoinApplication.create()
     lateinit var application: Application
 
     fun init(application: Application) {

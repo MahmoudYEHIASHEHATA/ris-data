@@ -3,14 +3,15 @@ package com.cassbana.risk.data.source.prefs
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import com.cassbana.risk.RSApp
+import com.cassbana.risk.RiskDataCollection
 
 private const val NAME = "PREFERENCES_NAME_RS"
 
 val preferencesGateway by lazy {
-    Preferences(com.cassbana.risk.RSApp.context.getSharedPreferences(NAME, MODE_PRIVATE))
+    RSPreferences(RiskDataCollection.application.baseContext.getSharedPreferences(NAME, MODE_PRIVATE))
 }
 
-class Preferences(val sharedPreferences: SharedPreferences) {
+class RSPreferences(val sharedPreferences: SharedPreferences) {
 
     inline fun <reified T : Any> save(key: String, value: T) {
         sharedPreferences.edit().apply { putValue(key, value) }.apply()

@@ -22,7 +22,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            debuggable true
+        }
         release {
+            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -52,15 +56,6 @@ dependencies {
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.2'
 
-
-  //  def koin_version = '2.0.1'
-//    implementation "org.koin:koin-java:$koin_version"
-//    implementation "org.koin:koin-android:$koin_version"
-//    implementation "org.koin:koin-androidx-scope:$koin_version"
-//    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-//    implementation "org.koin:koin-androidx-ext:$koin_version"
-
-
     def koin_version = '2.0.1'
     implementation "org.koin:koin-java:$koin_version"
     implementation "org.koin:koin-android:$koin_version"
@@ -68,21 +63,6 @@ dependencies {
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
     implementation "org.koin:koin-androidx-ext:$koin_version"
 
-//    def koin_version = '2.0.1'
-//    implementation "io.insert-koin:koin-core:$koin_version"
-//    implementation "io.insert-koin:koin-android:$koin_version"
-//  //  implementation "io.insert-koin:koin-android-compat:$koin_version"
-
-    //  Koin
-//    def koin_version = "3.2.0"
-//    implementation "io.insert-koin:koin-core:$koin_version"
-//    testImplementation "io.insert-koin:koin-test:$koin_version"
-//    testImplementation "io.insert-koin:koin-test-junit4:$koin_version"
-//    testImplementation "io.insert-koin:koin-test-junit5:$koin_version"
-//    implementation "io.insert-koin:koin-android:$koin_version"
-//    implementation "io.insert-koin:koin-android-compat:$koin_version"
-//    implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
-//    implementation "io.insert-koin:koin-androidx-navigation:$koin_version"
 
     // Retrofit and json
     def retrofitVersion = "2.9.0"
@@ -118,7 +98,7 @@ afterEvaluate {
                 // we'll set up later
                 groupId 'com.cassbana.risk'
                 artifactId 'risk-data-collection'
-                version '1.0.5'
+                version '1.0.6'
                 // Two artifacts, the `aar (or `jar`) and the sources
                 if (project.plugins.findPlugin("com.android.library")) {
                     from components.release

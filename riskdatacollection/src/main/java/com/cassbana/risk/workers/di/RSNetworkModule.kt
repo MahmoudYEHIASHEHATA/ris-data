@@ -60,7 +60,7 @@ fun provideNetworkInterceptor(): Interceptor {
         val request = original.newBuilder()
         runBlocking {
             val job = CoroutineScope(Dispatchers.IO).launch {
-                request.addHeader("Authorization", RSUserDataSource.getToken())
+                request.addHeader("Authorization","Bearer " + preferencesGateway.load(RSConstants.FCM_TOKEN,""))
             }
             job.join()
         }
@@ -227,7 +227,7 @@ fun provideCallAdapter(): CallAdapter.Factory {
 }
 
 fun provideCache(): Cache {
-    return Cache(File(com.cassbana.risk.RSDomain.application.cacheDir, "Responses"), (10 * 1000 * 1000).toLong())
+    return Cache(File(RSDomain.application.cacheDir, "Responses"), (10 * 1000 * 1000).toLong())
 }
 
 val networkModuleRS = module {

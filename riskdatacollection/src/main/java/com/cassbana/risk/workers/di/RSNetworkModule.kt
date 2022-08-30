@@ -276,6 +276,6 @@ val networkModuleRS = module {
     }
 
     single(named(FRAUD_RETROFIT_RS)) {
-        provideRetrofit("https://datacollectorapidev.azurewebsites.net/api/",get(named(GZIP_OKHTTP_RS)), get(named(CALL_ADAPTER_RS)), get())
+        provideRetrofit("https://qa-data-collectorapi.azurewebsites.net/api/",get(named(GZIP_OKHTTP_RS)), get(named(CALL_ADAPTER_RS)), get())
     }
 }

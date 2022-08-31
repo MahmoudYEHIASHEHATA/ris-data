@@ -1,6 +1,8 @@
 package com.cassbana.risk.workers.utils
 
+import android.util.Log
 import com.cassbana.risk.workers.constants.RSWorkerConstants
+import com.cassbana.risk.workers.simInfo.RSSIMInfoCollectWorker
 import kotlinx.coroutines.delay
 import timber.log.Timber
 
@@ -65,21 +67,21 @@ abstract class RSSyncingStrategy<T>(
             val deletedObjects = deletedChunks.getOrNull(i) ?: listOf()
 
             syncObjectWithTheServer(insertedObjects, updatedObjects, deletedObjects)
-            Timber.tag(tag).d("Sync with server chunk $i")
-            Timber.tag(tag).d("inserted: (${insertedObjects.size}  items) / $insertedObjects")
-            Timber.tag(tag).d("updated: (${updatedObjects.size} items) / $updatedObjects")
-            Timber.tag(tag).d("deleted: (${deletedObjects.size} items) / $deletedObjects")
+            Log.d(tag,"Sync with server chunk $i")
+            Log.d(tag,"inserted: (${insertedObjects.size}  items) / $insertedObjects")
+            Log.d(tag,"updated: (${updatedObjects.size} items) / $updatedObjects")
+            Log.d(tag,"deleted: (${deletedObjects.size} items) / $deletedObjects")
 
             insertIntoDB(insertedObjects)
-            Timber.tag(tag).d("insert in DB $insertedObjects")
+            Log.d(tag,"insert in DB $insertedObjects")
 
             updateIntoDB(updatedObjects)
-            Timber.tag(tag).d("update from DB $updatedObjects")
+            Log.d(tag,"update from DB $updatedObjects")
 
             deleteFromDB(deletedObjects)
-            Timber.tag(tag).d("delete from DB $deletedObjects")
+            Log.d(tag,"delete from DB $deletedObjects")
 
-            Timber.tag(tag).d("----------------------------------------------------------------")
+            Log.d(tag,"----------------------------------------------------------------")
 
             delay(5000)
         }

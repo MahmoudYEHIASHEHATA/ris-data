@@ -1,6 +1,7 @@
 package com.cassbana.risk.workers.simInfo
 
 import android.content.Context
+import android.util.Log
 import androidx.work.*
 import com.cassbana.risk.workers.simInfo.data.remote.RSSIMInfoModel
 import com.cassbana.risk.BuildConfig
@@ -143,7 +144,7 @@ class RSSIMInfoCollectWorker(
 
             syncingStrategy.doWork()
         } catch (e: Exception) {
-            Timber.tag(TAG).d("retry: ${e.message}")
+            Log.d(TAG,"retry: ${e.message}")
             return Result.failure()
 
         }

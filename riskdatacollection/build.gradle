@@ -27,7 +27,7 @@ android {
         }
         release {
             debuggable true
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -98,7 +98,7 @@ afterEvaluate {
                 // we'll set up later
                 groupId 'com.cassbana.risk'
                 artifactId 'risk-data-collection'
-                version '1.1.0'
+                version '1.1.1'
                 // Two artifacts, the `aar (or `jar`) and the sources
                 if (project.plugins.findPlugin("com.android.library")) {
                     from components.release

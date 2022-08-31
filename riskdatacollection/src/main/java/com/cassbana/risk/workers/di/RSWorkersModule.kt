@@ -2,6 +2,8 @@ package com.cassbana.risk.workers.di
 
 
 
+import com.cassbana.risk.CoroutineScopeDispatchers
+import com.cassbana.risk.ICoroutineScopeDispatchers
 import com.cassbana.risk.workers.simInfo.data.mapper.RSSIMInformationMapper
 import com.cassbana.risk.workers.utils.RSUniqueIDGeneratorUseCase
 import com.cassbana.risk.workers.utils.RSUniqueIDGeneratorWrapper
@@ -13,6 +15,8 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 
 val workersModuleRS = module {
+    single<ICoroutineScopeDispatchers> { CoroutineScopeDispatchers() }
+
     factory { get<RSAppDatabase>().simInformationDAO() }
 
     factory { get<Retrofit>(named(FRAUD_RETROFIT_RS)).create(RSFraudApis::class.java) }

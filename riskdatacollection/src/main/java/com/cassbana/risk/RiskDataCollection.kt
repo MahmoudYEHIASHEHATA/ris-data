@@ -3,6 +3,7 @@ package com.cassbana.risk
 import android.app.Application
 import android.content.Context
 import android.util.Log
+import androidx.annotation.Keep
 import com.cassbana.risk.data.source.prefs.preferencesGateway
 import com.cassbana.risk.data.source.prefs.preferencesModuleRS
 import com.cassbana.risk.database.databaseModuleRs
@@ -14,6 +15,7 @@ import org.koin.core.Koin
 import org.koin.core.KoinApplication
 import org.koin.core.KoinComponent
 
+@Keep
 object RiskDataCollection  {
 
     internal val internalKoinApplication = KoinApplication.create()
@@ -39,7 +41,7 @@ object RiskDataCollection  {
         Log.d("install anti fraud :", "installation data-collection success")
 
 }
-
+@Keep
 internal interface MySdkKoinComponent : KoinComponent {
     override fun getKoin(): Koin {
         return RiskDataCollection.internalKoinApplication.koin

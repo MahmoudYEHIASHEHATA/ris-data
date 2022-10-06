@@ -20,4 +20,3 @@
   @com.google.gson.annotations.SerializedName <fields>;
 }
 
--keep public class com.cassbana.risk.RiskDataCollection
